@@ -3,7 +3,7 @@ import mysql.connector
 
 def get_db_connection():
     conn = mysql.connector.connect(
-        host=os.getenv("mysql-bwd1.railway.internal"),
+        host=os.getenv("mysql://root:ymOWybFwJMvVbCyqMCGOqhwKpSDQBBfU@switchyard.proxy.rlwy.net:24248/railway"),
         user=os.getenv("root"),
         password=os.getenv("ymOWybFwJMvVbCyqMCGOqhwKpSDQBBfU"),
         database=os.getenv("railway"),
