@@ -1,10 +1,14 @@
-import sqlite3
-
-DATABASE_PATH = "activity.db"
-
+import os
+import mysql.connector
 
 def get_db_connection():
-    conn = sqlite3.connect(DATABASE_PATH)
+    conn = mysql.connector.connect(
+        host=os.getenv("mysql-bwd1.railway.internal"),
+        user=os.getenv("root"),
+        password=os.getenv("ymOWybFwJMvVbCyqMCGOqhwKpSDQBBfU"),
+        database=os.getenv("railway"),
+        port=int(os.getenv("3306", 3306))
+    )
     return conn
 
 
